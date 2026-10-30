@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-title" content="Mica Pocket">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=2">
   <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
   <title>Mica Pocket</title>
   <style>
@@ -1237,7 +1237,7 @@ button {
   const config = Object.freeze({
     account,
     messages,
-    defaultLocale: 'en',
+    defaultLocale: 'zh-CN',
     localeStorageKey: 'mica-pocket.locale',
   });
 
@@ -1585,7 +1585,7 @@ button {
     documentElement,
     storage,
     messages,
-    defaultLocale = 'en',
+    defaultLocale = 'zh-CN',
     storageKey = 'mica-pocket.locale',
   }) {
     if (!root || !documentElement || !messages || !messages[defaultLocale]) {
@@ -1842,7 +1842,7 @@ button {
         </div>
 
         <div class="shortcut-row" aria-hidden="true">
-          <div class="shortcut"><span class="shortcut-avatar shortcut-avatar--knowledge"></span><span data-i18n="knowledge">Knowled...</span></div>
+          <div class="shortcut"><span class="shortcut-avatar shortcut-avatar--knowledge"></span><span data-i18n="knowledge">知识问答</span></div>
           <div class="shortcut"><span class="shortcut-avatar avatar"><span>TF</span></span><span>Tiehan F...</span></div>
           <div class="shortcut"><span class="shortcut-avatar shortcut-avatar--merlin">M</span><span>Merlin Bot</span></div>
           <div class="shortcut"><span class="shortcut-avatar shortcut-avatar--aime">CN</span><span>Aime Pe...</span></div>
@@ -1853,9 +1853,9 @@ button {
         <div class="chat-filter" aria-hidden="true">
           <span class="filter-menu"><svg class="icon"><use href="#icon-menu"></use></svg></span>
           <div class="segmented-control">
-            <span class="is-selected" data-i18n="chats">Chats</span>
-            <span data-i18n="unread">Unread 80</span>
-            <span data-i18n="flagged">Flagged</span>
+            <span class="is-selected" data-i18n="chats">消息</span>
+            <span data-i18n="unread">未读 80</span>
+            <span data-i18n="flagged">标记</span>
           </div>
         </div>
       </header>
@@ -1863,7 +1863,7 @@ button {
       <div class="conversation-list" aria-hidden="true">
         <article class="conversation">
           <span class="conversation-avatar avatar-food">⌁<b class="unread">10</b></span>
-          <span class="conversation-copy"><span class="conversation-title">ByteCanteen <em class="tag tag--bot" data-i18n="tagBot">BOT</em></span><span class="conversation-preview">Yunji ShangpuTower A Menu Reminder</span></span>
+          <span class="conversation-copy"><span class="conversation-title">ByteCanteen <em class="tag tag--bot" data-i18n="tagBot">机器人</em></span><span class="conversation-preview">Yunji ShangpuTower A Menu Reminder</span></span>
           <time>5:27 PM</time>
         </article>
         <article class="conversation">
@@ -1873,7 +1873,7 @@ button {
         </article>
         <article class="conversation">
           <span class="conversation-avatar avatar-data">LIVE <i></i><b class="unread">1</b></span>
-          <span class="conversation-copy"><span class="conversation-title">TikTok-Data-Live <em class="tag tag--dept" data-i18n="tagDepartment">Department</em></span><span class="conversation-preview">Yingzhuo Huang: 【周知】各位模型迭代的同学，我...</span></span>
+          <span class="conversation-copy"><span class="conversation-title">TikTok-Data-Live <em class="tag tag--dept" data-i18n="tagDepartment">部门</em></span><span class="conversation-preview">Yingzhuo Huang: 【周知】各位模型迭代的同学，我...</span></span>
           <time>5:01 PM</time>
         </article>
         <article class="conversation">
@@ -1883,12 +1883,12 @@ button {
         </article>
         <article class="conversation">
           <span class="conversation-avatar avatar-llm">[GD<br>PA] L<b class="unread">29</b></span>
-          <span class="conversation-copy"><span class="conversation-title">LLMBox 租户咨询群 <em class="tag tag--public" data-i18n="tagPublic">Public</em></span><span class="conversation-preview">Zhanwen Li: @LLMBox-System-Agent 请问 auto / au...</span></span>
+          <span class="conversation-copy"><span class="conversation-title">LLMBox 租户咨询群 <em class="tag tag--public" data-i18n="tagPublic">公开</em></span><span class="conversation-preview">Zhanwen Li: @LLMBox-System-Agent 请问 auto / au...</span></span>
           <time>3:53 PM</time>
         </article>
         <article class="conversation">
           <span class="conversation-avatar avatar-mojo">⌁<b class="unread">1</b></span>
-          <span class="conversation-copy"><span class="conversation-title">Merlin Mojo <em class="tag tag--agent" data-i18n="tagAgent">Agent</em></span><span class="conversation-preview">🎁 Mojo 10月有奖活动上线[边体验，边抽奖]</span></span>
+          <span class="conversation-copy"><span class="conversation-title">Merlin Mojo <em class="tag tag--agent" data-i18n="tagAgent">智能体</em></span><span class="conversation-preview">🎁 Mojo 10月有奖活动上线[边体验，边抽奖]</span></span>
           <time>2:55 PM</time>
         </article>
         <article class="conversation">
@@ -1908,13 +1908,13 @@ button {
         </article>
       </div>
 
-      <nav class="bottom-nav" aria-label="Primary navigation" data-i18n-aria-label="primaryNavigation">
-        <span class="bottom-nav__item is-active"><span class="nav-glyph nav-glyph--messenger">●</span><b class="nav-badge">80</b><small data-i18n="navMessenger">Messenger</small></span>
-        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--calendar" data-testid="calendar-day"></span><small data-i18n="navCalendar">Calendar</small></span>
-        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--workplace">••<br>••</span><small data-i18n="navWorkplace">Workplace</small></span>
-        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--docs">▰</span><small data-i18n="navDocs">Docs</small></span>
-        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--mail">✉</span><b class="nav-badge">2</b><small data-i18n="navEmail">Email</small></span>
-        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--more">◉</span><small data-i18n="navMore">More</small></span>
+      <nav class="bottom-nav" aria-label="主导航" data-i18n-aria-label="primaryNavigation">
+        <span class="bottom-nav__item is-active"><span class="nav-glyph nav-glyph--messenger">●</span><b class="nav-badge">80</b><small data-i18n="navMessenger">消息</small></span>
+        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--calendar" data-testid="calendar-day"></span><small data-i18n="navCalendar">日历</small></span>
+        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--workplace">••<br>••</span><small data-i18n="navWorkplace">工作台</small></span>
+        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--docs">▰</span><small data-i18n="navDocs">云文档</small></span>
+        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--mail">✉</span><b class="nav-badge">2</b><small data-i18n="navEmail">邮箱</small></span>
+        <span class="bottom-nav__item"><span class="nav-glyph nav-glyph--more">◉</span><small data-i18n="navMore">更多</small></span>
       </nav>
 
     </section>
@@ -1922,97 +1922,97 @@ button {
     <div class="drawer-backdrop" data-testid="drawer-backdrop" aria-hidden="true"></div>
 
     <aside class="account-drawer" id="account-drawer" data-testid="account-drawer" aria-hidden="true">
-      <nav class="account-rail" data-testid="account-rail" aria-label="Accounts" data-i18n-aria-label="accounts">
+      <nav class="account-rail" data-testid="account-rail" aria-label="账号" data-i18n-aria-label="accounts">
         <div class="rail-account is-active">
           <span class="rail-app rail-app--byte"><i></i><i></i><i></i></span>
           <small>ByteDance</small>
         </div>
         <div class="rail-account">
           <span class="rail-app rail-app--add">＋</span>
-          <small data-i18n="moreAccounts">Log Into More Accounts</small>
+          <small data-i18n="moreAccounts">登录更多账号</small>
         </div>
       </nav>
 
       <section class="drawer-panel" data-testid="drawer-panel">
         <header class="drawer-profile">
           <span class="avatar avatar--large"><span data-account-initials>TF</span></span>
-          <span class="status-button" data-i18n="status">+ Status</span>
+          <span class="status-button" data-i18n="status">+ 状态</span>
           <h1 data-account-name>Tiehan Fan</h1>
           <span class="profile-tools" aria-hidden="true"><svg class="icon"><use href="#icon-qr"></use></svg><svg class="icon icon--chevron"><use href="#icon-chevron"></use></svg></span>
           <div class="organization-line">
             <span data-account-organization>ByteDance</span>
             <button class="verified-badge drawer-verified-badge" data-testid="verified-trigger" data-account-verified type="button" aria-controls="information-screen" aria-expanded="false">
               <svg class="verified-badge__icon" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1.4l2 1.2 2.3.2.9 2.1 1.7 1.5-.5 2.3.5 2.3-1.7 1.5-.9 2.1-2.3.2L9 16.6 7 15.4l-2.3-.2-.9-2.1-1.7-1.5.5-2.3-.5-2.3 1.7-1.5.9-2.1L7 2.6 9 1.4z"/><path class="verified-check" d="M5.8 9.1l2 2 4.3-4.3"/></svg>
-              <span data-i18n="verified">Verified</span>
+              <span data-i18n="verified">已认证</span>
             </button>
           </div>
           <div class="presence-strip" aria-hidden="true"><span>♙</span></div>
         </header>
 
-        <nav class="drawer-menu" aria-label="Account settings" data-i18n-aria-label="accountSettings">
-          <button type="button" class="drawer-menu__item"><svg class="icon icon--blue"><use href="#icon-profile"></use></svg><span data-i18n="profile">Profile</span></button>
-          <button type="button" class="drawer-menu__item"><svg class="icon icon--red"><use href="#icon-wallet"></use></svg><span data-i18n="wallet">Wallet</span></button>
-          <button type="button" class="drawer-menu__item"><svg class="icon icon--yellow"><use href="#icon-star"></use></svg><span data-i18n="favorites">Favorites</span></button>
-          <button type="button" class="drawer-menu__item"><svg class="icon icon--blue"><use href="#icon-users"></use></svg><span data-i18n="moreAccounts">Log Into More Accounts</span></button>
-          <button type="button" class="drawer-menu__item"><svg class="icon icon--red"><use href="#icon-headset"></use></svg><span data-i18n="contactUs">Contact Us</span></button>
-          <button type="button" class="drawer-menu__item"><svg class="icon icon--cyan"><use href="#icon-phone"></use></svg><span data-i18n="manageDevices">Manage Devices</span><span class="drawer-menu__meta">3&nbsp; <svg class="mini-phone"><use href="#icon-phone"></use></svg></span></button>
-          <button type="button" class="drawer-menu__item" data-testid="settings-trigger" aria-controls="settings-screen" aria-expanded="false"><svg class="icon icon--blue"><use href="#icon-settings"></use></svg><span data-i18n="settings">Settings</span></button>
+        <nav class="drawer-menu" aria-label="账号设置" data-i18n-aria-label="accountSettings">
+          <button type="button" class="drawer-menu__item"><svg class="icon icon--blue"><use href="#icon-profile"></use></svg><span data-i18n="profile">我的个人名片</span></button>
+          <button type="button" class="drawer-menu__item"><svg class="icon icon--red"><use href="#icon-wallet"></use></svg><span data-i18n="wallet">钱包</span></button>
+          <button type="button" class="drawer-menu__item"><svg class="icon icon--yellow"><use href="#icon-star"></use></svg><span data-i18n="favorites">收藏</span></button>
+          <button type="button" class="drawer-menu__item"><svg class="icon icon--blue"><use href="#icon-users"></use></svg><span data-i18n="moreAccounts">登录更多账号</span></button>
+          <button type="button" class="drawer-menu__item"><svg class="icon icon--red"><use href="#icon-headset"></use></svg><span data-i18n="contactUs">帮助与客服</span></button>
+          <button type="button" class="drawer-menu__item"><svg class="icon icon--cyan"><use href="#icon-phone"></use></svg><span data-i18n="manageDevices">登录设备</span><span class="drawer-menu__meta">3&nbsp; <svg class="mini-phone"><use href="#icon-phone"></use></svg></span></button>
+          <button type="button" class="drawer-menu__item" data-testid="settings-trigger" aria-controls="settings-screen" aria-expanded="false"><svg class="icon icon--blue"><use href="#icon-settings"></use></svg><span data-i18n="settings">设置</span></button>
         </nav>
 
-        <div class="emergency-pill" aria-hidden="true"><b>SOS</b><span data-i18n="emergency">Emergency SOS</span></div>
+        <div class="emergency-pill" aria-hidden="true"><b>SOS</b><span data-i18n="emergency">SOS 紧急联系</span></div>
       </section>
     </aside>
 
     <section class="information-screen" id="information-screen" data-testid="information-screen" aria-labelledby="information-title" aria-hidden="true">
       <header class="information-header">
-        <button class="information-back" data-testid="information-back" type="button" aria-label="Back to chats" data-i18n-aria-label="backToChats">
+        <button class="information-back" data-testid="information-back" type="button" aria-label="返回" data-i18n-aria-label="backToChats">
           <svg class="icon"><use href="#icon-chevron"></use></svg>
         </button>
-        <h2 id="information-title" data-i18n="information">Information</h2>
+        <h2 id="information-title" data-i18n="information">个人信息</h2>
       </header>
 
       <div class="information-content">
-        <section class="information-card" aria-label="Profile information" data-i18n-aria-label="profileInformation">
+        <section class="information-card" aria-label="个人资料" data-i18n-aria-label="profileInformation">
           <div class="information-row">
-            <span data-i18n="profilePhoto">Profile Photo</span>
+            <span data-i18n="profilePhoto">头像</span>
             <span class="information-value information-value--action"><span class="avatar information-avatar"><span data-account-initials>TF</span></span><svg class="icon icon--chevron"><use href="#icon-chevron"></use></svg></span>
           </div>
-          <div class="information-row"><span data-i18n="name">Name</span><span class="information-value" data-account-name>Tiehan Fan</span></div>
+          <div class="information-row"><span data-i18n="name">姓名</span><span class="information-value" data-account-name>Tiehan Fan</span></div>
           <div class="information-row">
-            <span data-i18n="myQrCode">My QR code</span>
+            <span data-i18n="myQrCode">我的二维码</span>
             <span class="information-value information-value--action"><svg class="icon information-qr"><use href="#icon-qr"></use></svg><svg class="icon icon--chevron"><use href="#icon-chevron"></use></svg></span>
           </div>
-          <div class="information-row"><span data-i18n="myBadges">My Badges</span><span class="information-value information-value--action"><svg class="icon icon--chevron"><use href="#icon-chevron"></use></svg></span></div>
-          <div class="information-row"><span data-i18n="bio">Bio</span><span class="information-value information-value--action"><span class="information-ellipsis" data-account-bio></span><svg class="icon icon--chevron"><use href="#icon-chevron"></use></svg></span></div>
+          <div class="information-row"><span data-i18n="myBadges">我的勋章</span><span class="information-value information-value--action"><svg class="icon icon--chevron"><use href="#icon-chevron"></use></svg></span></div>
+          <div class="information-row"><span data-i18n="bio">个性签名</span><span class="information-value information-value--action"><span class="information-ellipsis" data-account-bio></span><svg class="icon icon--chevron"><use href="#icon-chevron"></use></svg></span></div>
         </section>
 
-        <section class="information-card" aria-label="Organization information" data-i18n-aria-label="organizationInformation">
+        <section class="information-card" aria-label="企业信息" data-i18n-aria-label="organizationInformation">
           <div class="information-row">
-            <span data-i18n="organization">Organization</span>
+            <span data-i18n="organization">企业</span>
             <span class="information-value information-value--organization">
               <span data-account-organization>ByteDance</span>
               <span class="verified-badge information-verified-badge" data-testid="verified-badge" data-account-verified>
                 <svg class="verified-badge__icon" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 1.4l2 1.2 2.3.2.9 2.1 1.7 1.5-.5 2.3.5 2.3-1.7 1.5-.9 2.1-2.3.2L9 16.6 7 15.4l-2.3-.2-.9-2.1-1.7-1.5.5-2.3-.5-2.3 1.7-1.5.9-2.1L7 2.6 9 1.4z"/><path class="verified-check" d="M5.8 9.1l2 2 4.3-4.3"/></svg>
-                <span data-i18n="verified">Verified</span>
+                <span data-i18n="verified">已认证</span>
               </span>
             </span>
           </div>
-          <div class="information-row"><span data-i18n="department">Department</span><span class="information-value" data-account-department></span></div>
+          <div class="information-row"><span data-i18n="department">所属部门</span><span class="information-value" data-account-department></span></div>
         </section>
       </div>
     </section>
 
     <section class="settings-screen" id="settings-screen" data-testid="settings-screen" aria-labelledby="settings-title" aria-hidden="true">
       <header class="information-header">
-        <button class="information-back" data-testid="settings-back" type="button" aria-label="Back to chats" data-i18n-aria-label="backToChats">
+        <button class="information-back" data-testid="settings-back" type="button" aria-label="返回" data-i18n-aria-label="backToChats">
           <svg class="icon"><use href="#icon-chevron"></use></svg>
         </button>
-        <h2 id="settings-title" data-i18n="settings">Settings</h2>
+        <h2 id="settings-title" data-i18n="settings">设置</h2>
       </header>
 
       <div class="settings-content">
         <section class="settings-card" role="radiogroup" aria-labelledby="language-heading">
-          <h3 id="language-heading" data-i18n="language">Language</h3>
+          <h3 id="language-heading" data-i18n="language">语言</h3>
           <button class="locale-option" type="button" role="radio" data-locale-option="en" aria-checked="false">
             <span>English</span><span class="locale-check" aria-hidden="true">✓</span>
           </button>

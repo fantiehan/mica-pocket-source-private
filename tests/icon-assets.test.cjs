@@ -37,7 +37,7 @@ test('HTML and manifest declare iOS and installable PWA icons', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
   const manifest = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));
 
-  assert.match(html, /<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon\.png">/);
+  assert.match(html, /<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon\.png\?v=2">/);
   assert.match(html, /<link rel="icon" type="image\/png" sizes="192x192" href="icons\/icon-192\.png">/);
   assert.deepEqual(manifest.icons, [
     { src: 'icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },

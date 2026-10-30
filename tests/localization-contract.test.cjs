@@ -39,7 +39,7 @@ const expectedChinese = {
 };
 
 test('translation dictionaries include the Chinese UI shown in ref-zh.mp4', () => {
-  assert.equal(config.defaultLocale, 'en');
+  assert.equal(config.defaultLocale, 'zh-CN');
   assert.equal(config.localeStorageKey, 'mica-pocket.locale');
   assert.equal(Object.isFrozen(config.messages), true);
   for (const [key, value] of Object.entries(expectedChinese)) {
@@ -50,6 +50,9 @@ test('translation dictionaries include the Chinese UI shown in ref-zh.mp4', () =
 
 test('page exposes Settings navigation, language choices, translatable UI, and a dynamic calendar target', () => {
   const html = read('index.html');
+  assert.match(html, /<html lang="zh-CN">/);
+  assert.match(html, /data-i18n="settings">设置</);
+  assert.match(html, /data-i18n="navMessenger">消息</);
   for (const testId of ['settings-trigger', 'settings-screen', 'settings-back', 'calendar-day']) {
     assert.match(html, new RegExp(`data-testid=["']${testId}["']`));
   }

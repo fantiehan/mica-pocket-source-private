@@ -6,7 +6,7 @@
     documentElement,
     storage,
     messages,
-    defaultLocale = 'en',
+    defaultLocale = 'zh-CN',
     storageKey = 'mica-pocket.locale',
   }) {
     if (!root || !documentElement || !messages || !messages[defaultLocale]) {

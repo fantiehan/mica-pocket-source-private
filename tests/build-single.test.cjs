@@ -47,7 +47,7 @@ test('hosted build keeps real HTTPS icon URLs while inlining runtime source', ()
 
   const html = fs.readFileSync(path.join(siteDir, 'index.html'), 'utf8');
   assert.match(html, /href="manifest\.webmanifest"/);
-  assert.match(html, /href="apple-touch-icon\.png"/);
+  assert.match(html, /href="apple-touch-icon\.png\?v=2"/);
   assert.match(html, /href="icons\/icon-192\.png"/);
   assert.doesNotMatch(html, /href=["']styles\.css["']/);
   assert.doesNotMatch(html, /src=["'](?:config|drawer-controller|immersive-controller|information-controller|settings-controller|locale-controller|calendar-controller|app)\.js["']/);

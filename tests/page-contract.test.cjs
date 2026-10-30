@@ -56,7 +56,7 @@ test('Verified is a button that opens a semantic Information page with centraliz
   assert.match(html, /<button[^>]*class="verified-badge drawer-verified-badge"[^>]*data-testid="verified-trigger"/);
   assert.match(html, /<section[^>]*class="information-screen"[^>]*data-testid="information-screen"[^>]*aria-hidden="true"/);
   assert.match(html, /data-testid="information-back"/);
-  for (const label of ['Information', 'Profile Photo', 'Name', 'My QR code', 'My Badges', 'Bio', 'Organization', 'Department']) {
+  for (const label of ['个人信息', '头像', '姓名', '我的二维码', '我的勋章', '个性签名', '企业', '所属部门']) {
     assert.match(html, new RegExp(label));
   }
   assert.match(config, /bio:\s*'https:\/\/magic\.solutionsuite\.cn\/r\?k=img_v3_02e1\.\.\.'/);

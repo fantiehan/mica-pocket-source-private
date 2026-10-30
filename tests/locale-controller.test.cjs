@@ -77,22 +77,8 @@ function createHarness(stored = null, throws = false) {
   return { text, aria, english, chinese, documentElement, storage, controller };
 }
 
-test('locale controller defaults to English and synchronizes translated text and option state', () => {
+test('locale controller defaults to Simplified Chinese and synchronizes translated text and option state', () => {
   const { text, aria, english, chinese, documentElement, controller } = createHarness();
-
-  assert.equal(controller.getLocale(), 'en');
-  assert.equal(text.textContent, 'Settings');
-  assert.equal(aria.getAttribute('aria-label'), 'Back');
-  assert.equal(documentElement.getAttribute('lang'), 'en');
-  assert.equal(english.getAttribute('aria-checked'), 'true');
-  assert.equal(chinese.getAttribute('aria-checked'), 'false');
-  assert.equal(english.classList.contains('is-selected'), true);
-});
-
-test('selecting Simplified Chinese applies it immediately and persists it', () => {
-  const { text, aria, english, chinese, documentElement, storage, controller } = createHarness();
-
-  chinese.dispatch('click');
 
   assert.equal(controller.getLocale(), 'zh-CN');
   assert.equal(text.textContent, '设置');
@@ -100,22 +86,42 @@ test('selecting Simplified Chinese applies it immediately and persists it', () =
   assert.equal(documentElement.getAttribute('lang'), 'zh-CN');
   assert.equal(english.getAttribute('aria-checked'), 'false');
   assert.equal(chinese.getAttribute('aria-checked'), 'true');
-  assert.deepEqual(storage.writes, [['mica-pocket.locale', 'zh-CN']]);
+  assert.equal(chinese.classList.contains('is-selected'), true);
 });
 
-test('stored Simplified Chinese is restored while invalid or unavailable storage falls back to English', () => {
+test('selecting English applies it immediately and persists the explicit preference', () => {
+  const { text, aria, english, chinese, documentElement, storage, controller } = createHarness();
+
+  english.dispatch('click');
+
+  assert.equal(controller.getLocale(), 'en');
+  assert.equal(text.textContent, 'Settings');
+  assert.equal(aria.getAttribute('aria-label'), 'Back');
+  assert.equal(documentElement.getAttribute('lang'), 'en');
+  assert.equal(english.getAttribute('aria-checked'), 'true');
+  assert.equal(chinese.getAttribute('aria-checked'), 'false');
+  assert.deepEqual(storage.writes, [['mica-pocket.locale', 'en']]);
+
+  chinese.dispatch('click');
+  assert.equal(controller.getLocale(), 'zh-CN');
+  assert.equal(text.textContent, '设置');
+  assert.deepEqual(storage.writes.at(-1), ['mica-pocket.locale', 'zh-CN']);
+});
+
+test('explicit language choices are restored while invalid or unavailable storage falls back to Chinese', () => {
+  assert.equal(createHarness('en').controller.getLocale(), 'en');
   assert.equal(createHarness('zh-CN').controller.getLocale(), 'zh-CN');
-  assert.equal(createHarness('invalid').controller.getLocale(), 'en');
-  assert.equal(createHarness(null, true).controller.getLocale(), 'en');
+  assert.equal(createHarness('invalid').controller.getLocale(), 'zh-CN');
+  assert.equal(createHarness(null, true).controller.getLocale(), 'zh-CN');
 });
 
 test('destroy removes language option listeners', () => {
   const { english, chinese, controller } = createHarness();
 
   controller.destroy();
-  chinese.dispatch('click');
+  english.dispatch('click');
 
-  assert.equal(controller.getLocale(), 'en');
+  assert.equal(controller.getLocale(), 'zh-CN');
   assert.equal(english.listeners.get('click').size, 0);
   assert.equal(chinese.listeners.get('click').size, 0);
 });

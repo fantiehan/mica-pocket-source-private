@@ -37,7 +37,7 @@ function inlineInstallAssets(html) {
       const manifest = inlineManifest();
       return `href="data:application/manifest+json,${encodeURIComponent(manifest)}"`;
     })
-    .replace(/href="apple-touch-icon\.png"/, () => `href="${pngDataUrl('apple-touch-icon.png')}"`)
+    .replace(/href="apple-touch-icon\.png(?:\?v=2)?"/, () => `href="${pngDataUrl('apple-touch-icon.png')}"`)
     .replace(/href="icons\/icon-192\.png"/, () => `href="${pngDataUrl('icons/icon-192.png')}"`);
 }
 

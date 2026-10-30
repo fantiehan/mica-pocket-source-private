@@ -98,7 +98,7 @@
   const config = Object.freeze({
     account,
     messages,
-    defaultLocale: 'en',
+    defaultLocale: 'zh-CN',
     localeStorageKey: 'mica-pocket.locale',
   });
 
